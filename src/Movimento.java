@@ -1,4 +1,5 @@
 import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 
 public class Movimento {
     private Rotativo vaga;
@@ -6,14 +7,22 @@ public class Movimento {
     private LocalDateTime dataSaida;
     private String placa;
 
-    public void registrarSaida(){
-        this.dataSaida = LocalDateTime.now();
-        this.vaga.ocupada = false;
-        calculaTempo();
+    public void emitirRecibo(){
+        System.out.println("Entrada: " + this.dataEntrada);
+        System.out.println("Saida: " + this.dataSaida);
+        System.out.println("Duração: " + calculaTempo());
+        System.out.println("Valor R$: " + calculaTempo() * 10);
     }
 
-    private void calculaTempo(){
+    public void registrarSaida(){
+        //this.dataSaida = LocalDateTime.now();
+        this.dataSaida = LocalDateTime.parse("2022-10-06T15:00:00.000");
+        this.vaga.ocupada = false;
+        emitirRecibo();
+    }
 
+    private long calculaTempo(){
+      return  dataEntrada.until(dataSaida, ChronoUnit.HOURS);
     }
 
     public Movimento() {

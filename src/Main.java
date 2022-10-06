@@ -12,26 +12,31 @@ public class Main {
     static List<Cliente> clientes = new ArrayList<>();
     static List<Mensalista> mensalistas = new ArrayList<>();
     public static void main(String[] args) {
-      //criarVagasRotativas();
+      criarVagasRotativas();
       //lerVagas();
       // criarVagasMensalistas();
-       LocalDateTime dataEntrada = LocalDateTime.parse("2022-10-06T08:00:00.000");
-       LocalDateTime dataSaida = LocalDateTime.parse("2022-10-06T12:00:00.000");
-       System.out.println(dataSaida.getHour() - dataEntrada.getHour());
-       System.out.println(dataEntrada.toEpochSecond(OffsetDateTime.now().getOffset()));
-       System.out.println(dataSaida.toEpochSecond(OffsetDateTime.now().getOffset()));
+        Rotativo r = new Rotativo("A10",Preferencial.GERAL);
 
-       System.out.println(dataSaida.toInstant(OffsetDateTime.now().getOffset()));
+      Movimento m = new Movimento(r,"LZZ-1976");
+      m.registrarSaida();
+
+    }
+
+    public static void datas(){
+        LocalDateTime dataEntrada = LocalDateTime.parse("2022-10-06T08:00:00.000");
+        LocalDateTime dataSaida = LocalDateTime.parse("2022-10-06T12:00:00.000");
+        System.out.println(dataSaida.getHour() - dataEntrada.getHour());
+        System.out.println(dataEntrada.toEpochSecond(OffsetDateTime.now().getOffset()));
+        System.out.println(dataSaida.toEpochSecond(OffsetDateTime.now().getOffset()));
+
+        System.out.println(dataSaida.toInstant(OffsetDateTime.now().getOffset()));
         System.out.println(dataEntrada.toInstant(OffsetDateTime.now().getOffset()));
         long horaSaida = dataSaida.toInstant(OffsetDateTime.now().getOffset()).getEpochSecond();
         long horaEntrada = dataEntrada.toInstant(OffsetDateTime.now().getOffset()).getEpochSecond();
         System.out.println((horaSaida - horaEntrada)/60/60);
 
         System.out.println(dataEntrada.until(dataSaida, ChronoUnit.HOURS));
-
-
     }
-
     public static void criarVagasMensalistas(){
         criarCliente();
         Cliente cli = clientes.get(0);
