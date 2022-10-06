@@ -4,6 +4,7 @@ import java.sql.Date;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.time.OffsetDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.*;
 
 public class Main {
@@ -25,6 +26,8 @@ public class Main {
         long horaSaida = dataSaida.toInstant(OffsetDateTime.now().getOffset()).getEpochSecond();
         long horaEntrada = dataEntrada.toInstant(OffsetDateTime.now().getOffset()).getEpochSecond();
         System.out.println((horaSaida - horaEntrada)/60/60);
+
+        System.out.println(dataEntrada.until(dataSaida, ChronoUnit.HOURS));
 
 
     }
