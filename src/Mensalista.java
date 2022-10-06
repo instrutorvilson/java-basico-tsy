@@ -19,6 +19,7 @@ public class Mensalista extends Vaga{
     public boolean addCliente(Cliente cliente, Turno periodo){
         this.periodo = periodo;
         this.cliente = cliente;
+        this.ocupada = true;
         return true;
     }
 
