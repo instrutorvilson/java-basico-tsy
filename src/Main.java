@@ -12,16 +12,17 @@ public class Main {
     static List<Cliente> clientes = new ArrayList<>();
     static List<Mensalista> mensalistas = new ArrayList<>();
     public static void main(String[] args) {
-      criarVagasRotativas();
-      //lerVagas();
-      // criarVagasMensalistas();
-        Rotativo r = new Rotativo("A10",Preferencial.GERAL);
-
-      Movimento m = new Movimento(r,"LZZ-1976");
-      m.registrarSaida();
-
+      Calculadora c = new Calculadora();
+      System.out.println(c.soma(10,20));
+      System.out.println(Calculadora.subtrair(30,10));
     }
 
+    public static void registraMovimento(){
+        Rotativo r = new Rotativo("A10",Preferencial.GERAL);
+
+        Movimento m = new Movimento(r,"LZZ-1976");
+        m.registrarSaida();
+    }
     public static void datas(){
         LocalDateTime dataEntrada = LocalDateTime.parse("2022-10-06T08:00:00.000");
         LocalDateTime dataSaida = LocalDateTime.parse("2022-10-06T12:00:00.000");
