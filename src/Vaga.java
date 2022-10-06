@@ -1,6 +1,6 @@
 public abstract class Vaga {
     private String identificacao;
-    private boolean ocupada;
+    protected boolean ocupada;
 
     public Vaga() {
     }

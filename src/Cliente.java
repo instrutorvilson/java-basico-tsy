@@ -30,4 +30,8 @@ public class Cliente {
         return  true;
     }
 
+    public void display(){
+        System.out.println("Nome: " + this.nome);
+    }
+
 }
