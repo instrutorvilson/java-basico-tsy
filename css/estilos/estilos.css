@@ -1,0 +1,33 @@
+.principal{
+    background-color: blue;
+    color: red;
+}
+
+#main{
+    background-color: red;
+}
+
+p{
+    background-color: green;
+    text-align: justify;
+    border: 2px solid red;  
+    padding: 10px; 
+    font-size: 14px;
+}
+
+.gravar{
+    background-color: blue;
+    color: white;
+    padding: 5px 10px 5px 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.gravar:hover{
+    background-color: white;
+    color: blue;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
