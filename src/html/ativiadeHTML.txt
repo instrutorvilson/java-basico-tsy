@@ -1,4 +1,0 @@
-Criar um site utilizando HTML que contenha pelo no minimo 5 paginas.
- -> em todas as páginas deve aparecer o menu e um rodapé;
--> coloque imagens e crie um link para navegar para uma página com uma descrição sobre a imagem
--> criar uma página de boas vindas ao site e uma página para visualizar as forma de entrar em contato com a administraçaõ do site.
