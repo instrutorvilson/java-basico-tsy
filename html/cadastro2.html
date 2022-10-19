@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            background-color: silver;
+            width: 400px;
+            margin: auto;
+        }
+        input{
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <div>
+            <label>Nome</label>
+            <input type="text" placeholder="Informe nome" />
+
+            <label>Informe idade</label>
+            <input type="number" placeholder="Informe idade" />
+
+            <label>Informe data de nascimento</label>
+            <input type="date" placeholder="Informe idade" />
+            <label>Informe hora de inicio</label>
+            <input type="time" placeholder="Informe hora" />
+
+            <label>Email</label>
+            <input type="email" placeholder="Informe email"  />
+            
+            <label>masculino</label>
+            <input type="radio" value='M' name='genero' checked/>
+
+            <label>Femenino</label>
+            <input type="radio" value='F' name='genero'/>     
+             
+            <label>Checboxes</label>
+            <label>Livros</label>
+            <input type="checkbox" value="maca" /> 
+            <label>viagens</label>
+            <input type="checkbox" value="viagem" />
+            <label>Ficar em casa</label>
+            <input type="checkbox" value="viagem" />
+
+            <button onclick="setGenero()">Enviar</button>
+        </div>
+    </form>
+    
+</body>
+
+</html>
