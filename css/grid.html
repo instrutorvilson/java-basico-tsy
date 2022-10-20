@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+ body{
+    height: 100vh;
+ }
+
+.item1 { grid-area: header; }
+.item2 { grid-area: menu; }
+.item3 { grid-area: main; }
+.item4 { grid-area: right; }
+.item5 { grid-area: footer;}
+
+.grid-container {
+  height: 100%;
+  display: grid;
+  grid-template-areas:
+    'menu header header header header header'
+    'menu main main main main right'
+    'footer footer footer footer footer footer';
+  grid-template-rows: 20% 70% 10%;  
+  row-gap: 2px;
+  column-gap: 3px;
+  background-color: #2196F3;
+  padding: 2px;
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 2px 0;
+  font-size: 30px;
+}
+
+.cabeca{
+    background-color: red;
+}
+
+
+</style>
+</head>
+<body>
+
+<div class="grid-container">
+  <header class="item1">
+    <header class="cabeca">
+       Oi
+   </header> 
+  </header>
+  <div class="item2">Menu</div>
+  <div class="item3">Main</div>  
+  <div class="item4">Right</div>
+  <div class="item5">
+    <footer>Direitos autorais</footer> 
+  </div>
+</div>
+
+</body>
+</html>

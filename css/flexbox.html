@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+          background-color: blue;
+          display: flex;
+          justify-content: space-between;  
+          align-items: flex-end;       
+        }
+
+        .container div {
+           background-color: white;           
+           margin: 5px;
+           padding: 2px;
+        }
+
+        ol li{
+            display: inline;
+        }
+
+        .logo{
+            flex: 10%;
+        }
+
+        .admin{
+            flex: 20%
+        }
+
+        .menu{
+            flex: 70%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+         <div class="logo">Logo</div>
+         <div class="menu">
+            <ol>
+                <li><a href="">Cadastro</a></li>
+                <li><a href="">Cadastro</a></li>
+            </ol>
+        </div>
+         <div class="admin">
+            <input type="search" /> 
+             <button>Login</button>
+            </div>
+    </div>
+</body>
+</html>

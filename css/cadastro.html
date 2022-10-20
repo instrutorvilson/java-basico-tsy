@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input[type=text],input[type="email"]{
+            width: 100%;
+            background-color: silver;
+        }
+
+        input[type='number']{
+            width: 80%;
+            background-color: red;
+        }
+
+        input:focus{
+            background-color: darkolivegreen;
+            padding: 10px;
+        }
+
+        .container{
+            width: 400px;
+        }
+        .esconder:hover + .container{
+           display: none;
+        }
+        
+        .dropdown{
+            background-color: red;
+        }
+
+        .drop-content{
+            color: white;
+        }
+
+        .dropdown:hover .drop-content{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <button class="esconder">Esconder</button>
+    <div class="container">
+        <input type="text" placeholder="Informe nome" />
+        <input type="email" placeholder="Informe email" />
+        <input type="number" placeholder="Informe sua altura" />        
+    </div>
+
+    <div class="dropdown">
+        <div class="drop-content">
+            <input type="text" />
+        </div>
+    </div>
+     
+</body>
+</html>
