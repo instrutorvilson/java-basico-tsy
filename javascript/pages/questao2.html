@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="valor" placeholder="Informe valor" />
+    <input type="radio" name="formapagto" value="prazo" /> <Label>A prazo?</Label>
+    <input type="radio" name="formapagto" value="avista" /> <Label>A vista?</Label>
+    <button onclick="calcular()">Calcular</button>
+    <hr>
+    <p>Valor R$:<span id="val"></span></p>
+    <p>Desconto R$: <span id="desconto"></span></p>
+    <p>Total R$: <span id="total"></span></p>
+    <script>
+        function calcular(){
+            var formapagto = document.querySelector('input[name=formapagto]:checked').value
+            var total = 0
+            var desconto = 0
+            var valor = document.getElementById('valor').value
+          
+            if(valor < 100)
+               total = valor
+            else if( formapagto == 'avista'){
+                desconto = valor * 0.1 
+            }
+            
+            total = valor - desconto
+            document.getElementById("val").innerHTML = parseFloat(valor).toFixed(2)
+            document.getElementById("desconto").innerHTML = parseFloat(desconto).toFixed(2)
+            document.getElementById("total").innerHTML = parseFloat(total).toFixed(2)
+            
+        }
+    </script>
+</body>
+</html>

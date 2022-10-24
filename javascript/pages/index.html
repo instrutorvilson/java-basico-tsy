@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../scripts/calculadora.js"></script>
+</head>
+<body>
+    <input type="number" id="n1" placeholder="Informe numero" />
+    <input type="number" id="n2"  placeholder="Informe numero" />
+    <button onclick="calcular()">Somar</button>
+    <hr />
+    <p></p>
+
+    <script>
+        function calcular(){
+           /* var n1 = document.getElementById('n1')
+            var n2 = document.getElementById('n2')
+            var ret = soma(parseInt(n1.value), parseInt(n2.value))
+          */
+           var n1 = Number(document.getElementById('n1').value)
+           var n2 = Number(document.getElementById('n2').value)
+           
+           document.getElementsByTagName('p')[0].innerHTML = soma(n1, n2)
+        }
+    </script>
+</body>
+</html>

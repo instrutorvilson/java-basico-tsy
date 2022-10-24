@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            height: 10vh;
+        }
+
+        .blue{
+            background-color: blue;            
+        }
+
+        .red{
+            background-color: red;
+        }
+
+        .bordas{
+            border-radius: 10px;
+        }
+
+        .foco{
+            background-color: silver;
+            color: red;
+        }
+        .semfoco{
+            background-color: white;
+            color: black;
+        }
+        .sobre{
+            background-color: blue;
+            color:white;
+        }
+
+        .sair{
+            background-color: white;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <button 
+       onmouseover="this.setAttribute('class','sobre')" 
+       onmouseleave="this.setAttribute('class','sair')"
+       onclick="trocar()">Trocar estilo</button>
+    <div class="blue bordas">
+         <input type="text" onfocus="focar(this)" onblur="desfocar(this)" placeholder="Informe nome" />
+         <input type="text" onfocus="focar(this)" onblur="desfocar(this)" placeholder="Informe email" />
+    </div>
+
+    <script>
+        function trocar(){
+           var d = document.getElementsByTagName('div')[0]
+           if(d.getAttribute('class').indexOf('blue') != -1)
+              d.setAttribute('class','red')
+           else  
+             d.setAttribute('class','blue bordas')
+        }
+
+        function focar(elemento){
+            elemento.setAttribute('class','foco')
+        }
+
+        function desfocar(elemento){
+            elemento.setAttribute('class','semfoco')
+        }
+    </script>
+</body>
+</html>
