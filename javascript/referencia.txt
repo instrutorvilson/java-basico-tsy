@@ -1,0 +1,16 @@
+https://www.w3schools.com/js/js_json_intro.asp 
+
+
+Objeto
+jSON
+
+Objecto -> json
+
+callbacks
+promises
+
+consumir rest API
+storage
+
+SOAP -> xml
+
