@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+          <style>
+            .livre{
+               margin: 3px;  
+               width: 40px;
+               background-color: green;
+               color: white;
+            }
+            
+            .ocupado{
+               margin: 3px;  
+               width: 40px;
+               background-color: red;
+               color: white; 
+            }
+            
+            img{
+               width: 200px;
+               height: 100px;
+               display: block;
+               margin-left: auto;
+               margin-right: auto
+            }
+            
+            .sala{
+               width: 230px; 
+               display: block;
+               margin-left: auto;
+               margin-right: auto
+            }
+            .resultado{
+                background-color: lightblue;
+                border: red solid 1px;
+                height: 100px;
+                position: absolute;
+                right: 5px;
+                top: 5px;
+            }
+            
+            .setup{
+                background-color: lightblue;
+                border: red solid 1px;
+                height: 100px;
+                position: absolute;
+                left:5px;
+                top: 5px;  
+            }
+        </style>    
+    </head>
+    
+    <div>
+        <img src="imagens/cinema.jpg" alt="???" />
+    </div>
+       
+        <div class="setup">
+           <label>Digite total de cadeiras</label>
+           <input type="number" id="totalCadeiras"/>
+                  
+           <button onclick="criarSala()" type="button">Criar Sala
+            <i class='fas fa-share-square'></i></button> 
+            <p id="validaTotalCadeiras"></p>
+        </div>  
+         
+        <hr />
+        
+        <div id="ancora" class="sala">
+            
+        </div>
+        
+        <div class="resultado">
+            <label>Total de cadeiras livres: </label> 
+            <input type="text" id="livres" readonly="" /> <br />
+            <label>Total de cadeiras ocupadas: </label>
+            <input type="text" id="ocupados" readonly="" />  
+        </div>
+        
+        
+        
+        <a href="https://www.neumarktshopping.com.br/" title="neumarkte">
+            <i class='fas fa-spider'></i></a>
+        
+        <script>
+            function criarSala(){
+               var totalCadeiras = document.getElementById("totalCadeiras").value;
+               if(totalCadeiras === ""){
+                  // alert("informe o total de cadeiras");
+                   //document.getElementById("totalCadeiras").onfocus();
+                   document.getElementById("validaTotalCadeiras").innerHTML = "informe o total de cadeiras";
+                   exit;
+               }   
+            
+               var ancora = document.getElementById("ancora");
+               var colunas=5;
+               for(i=1;i<=totalCadeiras;i++){
+                  var bt = document.createElement("input");
+                  bt.setAttribute("type","button");
+                  bt.setAttribute("value","c"+i);
+                  bt.setAttribute("class","livre");
+                  bt.setAttribute("onclick","reservar(this)");
+                  bt.setAttribute("id","bt"+i);
+                  
+                  if(colunas === 0){
+                      var br = document.createElement("br");
+                      ancora.appendChild(br);
+                      colunas=5;
+                  }
+                  ancora.appendChild(bt);
+                  colunas--;
+              }               
+            }
+            
+            function reservar(btClicado){
+             var x = btClicado.getAttribute("class");
+             if(x==="livre"){
+              btClicado.setAttribute("class","ocupado"); 
+             }else{
+               btClicado.setAttribute("class","livre");  
+             }                  
+              
+              livresOcupados();
+            }
+            
+            function livresOcupados(){
+                var livres = document.getElementsByClassName("livre");
+                document.getElementById("livres").value = livres.length;
+                
+                var ocupados = document.getElementsByClassName("ocupado");
+                document.getElementById("ocupados").value = ocupados.length;
+            }
+        </script>    
+    
+</html>

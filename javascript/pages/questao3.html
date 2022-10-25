@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="checkbox" /> <label>Sanduiche</label>
+    <input type="checkbox" /> <label>Suco</label>
+    <input type="checkbox" /> <label>Bala</label>
+    <input type="checkbox" /> <label>Torta</label>
+    <p>Total: <span></span></p>
+    <script>
+       
+      /*
+      //forma 1
+      document.querySelectorAll('input[type=checkbox]').forEach(element => {
+        element.setAttribute('onclick', 'atualiza()')
+      }); 
+
+      function atualiza(){
+        document.getElementsByTagName('span')[0].innerHTML = document.querySelectorAll('input[type=checkbox]:checked').length 
+      } 
+      */
+
+      //forma 2
+      var contador = 0
+      document.querySelectorAll('input[type=checkbox]').forEach(element => {
+        element.setAttribute('onclick', 'atualiza(this)')
+      }); 
+      
+      function atualiza(elemento){
+        if(elemento.checked)
+          contador++
+
+        document.getElementsByTagName('span')[0].innerHTML = contador
+      } 
+    </script>
+</body>
+</html>
