@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio CallBack</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <div class="container">
+        <label for="descricao" class="form-label">Descrição</label>
+        <input type="text" id="descricao" placeholder="Informe descrição" class="form-control mb-2" />
+
+        <label for="preco" class="form-label">Preço</label>
+        <input type="number" id="preco" placeholder="Informe preço" class="form-control mb-2" />
+
+        <label for="estoque" class="form-label">Estoque</label>
+        <input type="number" id="estoque" placeholder="Informe estoque" class="form-control mb-2" />
+
+        <label for="un" class="form-label">Selecione unidade de medida</label>
+        <select class="form-select" id="un">
+            <option value="">--</option>
+            <option value="MT">Metros</option>
+            <option value="KG">Kilos</option>
+            <option value="UN">Unidades</option>
+        </select>
+        <button class="btn btn-primary" onclick="add()">Gravar</button>
+    </div>
+
+    
+
+    <script>
+        var descricao = ''
+        var preco = 0
+        var estoque = 0
+        var un = '' 
+
+        var produtos = []
+        if (localStorage.getItem('produtos')){
+            produtos = JSON.parse(localStorage.getItem('produtos'))
+        }                  
+
+        function add() {
+             //quando a variavel que armazena valor tem o mesmo nome do atributo basta informar um só
+            if (validaDados()) {
+                var obj = {
+                    descricao,
+                    preco: preco,
+                    estoque: estoque,
+                    unidadeMedida: un
+                }
+                console.log(obj)
+                produtos.push(obj)
+                //gravar no storage
+                localStorage.setItem('produtos', JSON.stringify(produtos))
+            }
+
+        }
+
+        function validaDados() {
+            var cDescricao = document.getElementById('descricao')
+            var cPreco = document.getElementById('preco')
+            var cEestoque = document.getElementById('estoque')
+            var vUn = document.getElementById('un')
+
+            if(cDescricao.value == ''){
+               alert('O descrição deve ser informada') 
+               cDescricao.focus()
+               return false
+            }
+
+            descricao = cDescricao.value
+            preco = cPreco.value
+            estoque = cEestoque.value
+            un = vUn.value
+            return true;
+        }
+    </script>
+</body>
+
+</html>
