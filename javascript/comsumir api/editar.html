@@ -40,6 +40,7 @@
         <input type="number" id="estoque" placeholder="Informe estoque" class="form-control mb-2" />
 
         <button class="btn btn-primary" onclick="add()">Gravar</button>
+        <button class="btn btn-danger" onclick="excluir()">Excluir</button>
     </div>
 
 
@@ -85,6 +86,15 @@
             preco = cPreco.value
             estoque = cEestoque.value
             return true;
+        }
+
+        function excluir(){
+            //fazer requisição DELETE para backend
+            fetch(`http://localhost:3500/produtos/${idproduto}`, {
+                    method: "DELETE",
+                    headers: { "Content-type": "application/json; charset=UTF-8" }
+            })
+            .then(() => window.location.href = 'fetch.html')
         }
 
     </script>
