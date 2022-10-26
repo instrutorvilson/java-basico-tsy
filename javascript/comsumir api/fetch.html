@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Descrição</th>
+                    <th>Preço</th>
+                    <th>Estoque</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+    <script>
+        fetch('http://localhost:3500/produtos')
+        .then( response => response.json())
+        .then( dado => {
+            showTable(dado)
+        })
+        .catch(error => console.log(error))
+
+        function showTable(produtos) {
+            var txt = ''
+            for (let i = 0; i < produtos.length; i++) {
+                txt += `<tr>
+                        <td>${produtos[i].id}</td>
+                        <td>${produtos[i].descricao}</td>
+                        <td>${produtos[i].preco}</td>
+                        <td>${produtos[i].estoque}</td>                        
+                    </tr>`
+            }
+            document.getElementsByTagName('tbody')[0].innerHTML = txt;
+        }
+    </script>
+</body>
+</html>
