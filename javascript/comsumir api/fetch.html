@@ -15,6 +15,7 @@
                     <th>Descrição</th>
                     <th>Preço</th>
                     <th>Estoque</th>
+                    <th>Ações</th>
                 </tr>
             </thead>
             <tbody>
@@ -37,7 +38,8 @@
                         <td>${produtos[i].id}</td>
                         <td>${produtos[i].descricao}</td>
                         <td>${produtos[i].preco}</td>
-                        <td>${produtos[i].estoque}</td>                        
+                        <td>${produtos[i].estoque}</td>  
+                        <td><a href='editar.html?id=${produtos[i].id}'>Editar</a></td>                       
                     </tr>`
             }
             document.getElementsByTagName('tbody')[0].innerHTML = txt;

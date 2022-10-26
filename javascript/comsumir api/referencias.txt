@@ -1,0 +1,3 @@
+https://www.fabricadecodigo.com/json-server/
+
+https://www.freecodecamp.org/portuguese/news/tutorial-de-fetch-api-em-javascript-exemplos-de-post-e-cabecalho/
